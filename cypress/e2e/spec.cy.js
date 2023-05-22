@@ -58,7 +58,7 @@ describe("Juice-Shop without login", () => {
         cy.get('[aria-label="Close Welcome Banner"]').click();
     });
 
-    it('Register a new user', () => {
+    it.only('Register a new user', () => {
         // Click aaccount
         cy.get("#navbarAccount").click();
         // Clic login
@@ -66,7 +66,7 @@ describe("Juice-Shop without login", () => {
         // Click Not yet a customer?
         cy.get("#newCustomerLink").click();  
         // Input email
-        cy.get("#emailControl").type("demo1@gmail.com");
+        cy.get("#emailControl").type("demo2@gmail.com");
         // Inmput password
         cy.get("#passwordControl").type("demo1");
         // Input repeat password
@@ -79,7 +79,7 @@ describe("Juice-Shop without login", () => {
         // Click register
         cy.get("#registerButton").click();
         // validate that we on login page- email and password field should be visible
-
+        cy.get("#email").should("be.visible");
     });
     
 });
