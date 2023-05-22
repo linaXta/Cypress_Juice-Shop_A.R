@@ -78,7 +78,7 @@ describe("Juice-Shop without login", () => {
         cy.get("#securityAnswerControl").type("demo1");
         // Click register
         cy.get("#registerButton").click();
-        // validate that we on login page- email and password field should be visible
+        // validate that we on login page
         cy.get("#email").should("be.visible");
     });
     
